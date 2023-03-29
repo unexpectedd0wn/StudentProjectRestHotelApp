@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b05c51565674cee8016288fe5e8caf6" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="HMSModel.BanquetDish" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.BanquetStatu" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.BookingTableStatu" Width="1.5" PointX="10" PointY="11.375" />
+        <EntityTypeShape EntityType="HMSModel.sysdiagram" Width="1.5" PointX="5.75" PointY="11.25" />
+        <EntityTypeShape EntityType="HMSModel.BookingTable" Width="1.5" PointX="13.25" PointY="6.125" />
+        <AssociationConnector Association="HMSModel.FK_BookingTables_BookingTableStatus" />
+        <EntityTypeShape EntityType="HMSModel.Dish" Width="1.5" PointX="3" PointY="7.875" />
+        <AssociationConnector Association="HMSModel.FK_BanquetDishes_Dishes" />
+        <EntityTypeShape EntityType="HMSModel.User" Width="1.5" PointX="3" PointY="3.875" />
+        <AssociationConnector Association="HMSModel.FK_BanquetDishes_ToUsers" />
+        <AssociationConnector Association="HMSModel.FK_BookingTables_ToUsers" />
+        <EntityTypeShape EntityType="HMSModel.Waiter" Width="1.5" PointX="6.75" PointY="7.375" />
+        <AssociationConnector Association="HMSModel.FK_Waiters_ToUsers" />
+        <EntityTypeShape EntityType="HMSModel.WatersSchedule" Width="1.5" PointX="5.25" PointY="14.5" />
+        <AssociationConnector Association="HMSModel.FK_WatersSchedule_ToUsers" />
+        <EntityTypeShape EntityType="HMSModel.Banquet" Width="1.5" PointX="13.75" PointY="0.75" />
+        <AssociationConnector Association="HMSModel.FK_BanquetDishes_Banquets" />
+        <AssociationConnector Association="HMSModel.FK_Banquets_BanquetStatus" />
+        <AssociationConnector Association="HMSModel.FK_Banquets_ToUsers" />
+        <EntityTypeShape EntityType="HMSModel.DishType" Width="1.5" PointX="5.25" PointY="27.25" />
+        <EntityTypeShape EntityType="HMSModel.PrepaymentStatus" Width="1.5" PointX="5.25" PointY="21.25" />
+        <EntityTypeShape EntityType="HMSModel.Report" Width="1.5" PointX="5.25" PointY="24.375" />
+        <EntityTypeShape EntityType="HMSModel.TablePosition" Width="1.5" PointX="5.25" PointY="18.125" />
+        <AssociationConnector Association="HMSModel.FK_Banquets_PrepaymentStatuses" />
+        <AssociationConnector Association="HMSModel.FK_Dishes_DishType" />
+        <AssociationConnector Association="HMSModel.FK_DishType_ToUsers" />
+        <AssociationConnector Association="HMSModel.FK_PrepaymentStatuses_ToUsers" />
+        <AssociationConnector Association="HMSModel.FK_Reports_ToUsers" />
+        <AssociationConnector Association="HMSModel.FK_TablePosition_ToUsers" />
+        <EntityTypeShape EntityType="HMSModel.RestTable" Width="1.5" PointX="8.5" PointY="13.75" />
+        <AssociationConnector Association="HMSModel.FK_BookingTables_RestTables" />
+        <AssociationConnector Association="HMSModel.FK_RestTables_ToTablePosition" />
+        <AssociationConnector Association="HMSModel.FK_RestTables_ToUsers" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

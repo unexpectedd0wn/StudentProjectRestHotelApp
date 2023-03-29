@@ -1,0 +1,1218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HMSModelStoreContainer">
+    <EntitySet Name="BanquetDishes" EntityType="HMSModel.Store.BanquetDishes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BanquetStatus" EntityType="HMSModel.Store.BanquetStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BookingTableStatus" EntityType="HMSModel.Store.BookingTableStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="HMSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BookingTables" EntityType="HMSModel.Store.BookingTables" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Dishes" EntityType="HMSModel.Store.Dishes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="HMSModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Waiters" EntityType="HMSModel.Store.Waiters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WatersSchedules" EntityType="HMSModel.Store.WatersSchedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Banquets" EntityType="HMSModel.Store.Banquets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DishTypes" EntityType="HMSModel.Store.DishTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PrepaymentStatuses" EntityType="HMSModel.Store.PrepaymentStatuses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reports" EntityType="HMSModel.Store.Reports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TablePositions" EntityType="HMSModel.Store.TablePositions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RestTables" EntityType="HMSModel.Store.RestTables" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_BookingTables_BookingTableStatus" Association="HMSModel.Store.FK_BookingTables_BookingTableStatus">
+      <End Role="BookingTableStatu" EntitySet="BookingTableStatus" />
+      <End Role="BookingTable" EntitySet="BookingTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanquetDishes_Dishes" Association="HMSModel.Store.FK_BanquetDishes_Dishes">
+      <End Role="Dish" EntitySet="Dishes" />
+      <End Role="BanquetDish" EntitySet="BanquetDishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanquetDishes_ToUsers" Association="HMSModel.Store.FK_BanquetDishes_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="BanquetDish" EntitySet="BanquetDishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookingTables_ToUsers" Association="HMSModel.Store.FK_BookingTables_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="BookingTable" EntitySet="BookingTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Waiters_ToUsers" Association="HMSModel.Store.FK_Waiters_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Waiter" EntitySet="Waiters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WatersSchedule_ToUsers" Association="HMSModel.Store.FK_WatersSchedule_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="WatersSchedule" EntitySet="WatersSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanquetDishes_Banquets" Association="HMSModel.Store.FK_BanquetDishes_Banquets">
+      <End Role="Banquet" EntitySet="Banquets" />
+      <End Role="BanquetDish" EntitySet="BanquetDishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Banquets_BanquetStatus" Association="HMSModel.Store.FK_Banquets_BanquetStatus">
+      <End Role="BanquetStatu" EntitySet="BanquetStatus" />
+      <End Role="Banquet" EntitySet="Banquets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Banquets_ToUsers" Association="HMSModel.Store.FK_Banquets_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Banquet" EntitySet="Banquets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Banquets_PrepaymentStatuses" Association="HMSModel.Store.FK_Banquets_PrepaymentStatuses">
+      <End Role="PrepaymentStatus" EntitySet="PrepaymentStatuses" />
+      <End Role="Banquet" EntitySet="Banquets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dishes_DishType" Association="HMSModel.Store.FK_Dishes_DishType">
+      <End Role="DishType" EntitySet="DishTypes" />
+      <End Role="Dish" EntitySet="Dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DishType_ToUsers" Association="HMSModel.Store.FK_DishType_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="DishType" EntitySet="DishTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrepaymentStatuses_ToUsers" Association="HMSModel.Store.FK_PrepaymentStatuses_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="PrepaymentStatus" EntitySet="PrepaymentStatuses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reports_ToUsers" Association="HMSModel.Store.FK_Reports_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TablePosition_ToUsers" Association="HMSModel.Store.FK_TablePosition_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TablePosition" EntitySet="TablePositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookingTables_RestTables" Association="HMSModel.Store.FK_BookingTables_RestTables">
+      <End Role="RestTable" EntitySet="RestTables" />
+      <End Role="BookingTable" EntitySet="BookingTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestTables_ToTablePosition" Association="HMSModel.Store.FK_RestTables_ToTablePosition">
+      <End Role="TablePosition" EntitySet="TablePositions" />
+      <End Role="RestTable" EntitySet="RestTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RestTables_ToUsers" Association="HMSModel.Store.FK_RestTables_ToUsers">
+      <End Role="User" EntitySet="Users" />
+      <End Role="RestTable" EntitySet="RestTables" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BanquetDishes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BanquetId" Type="int" Nullable="false" />
+    <Property Name="DishId" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="true" />
+    <Property Name="ChangedBy" Type="int" Nullable="true" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BanquetStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BookingTableStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BookingTables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Table" Type="int" Nullable="false" />
+    <Property Name="NumberOfQuests" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="BookingTime" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dishes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="Discount" Type="decimal" Nullable="true" Precision="10" Scale="0" />
+    <Property Name="Type" Type="int" Nullable="true" />
+    <Property Name="Weight" Type="decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="IsAvalible" Type="bit" Nullable="false" />
+    <Property Name="Сomposition" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ChangedBy" Type="int" Nullable="true" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="isAdmininistrator" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Waiters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WatersSchedules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WaterId" Type="int" Nullable="false" />
+    <Property Name="WorkDate" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banquets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Time" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumberOfQuests" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerFirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerLastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerPhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PrepaymentId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Service" Type="decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="Discount" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangeDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DishTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrepaymentStatuses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TablePositions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RestTables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableNumber" Type="int" Nullable="false" />
+    <Property Name="PositionId" Type="int" Nullable="true" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ChangedBy" Type="int" Nullable="false" />
+    <Property Name="ChangedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BookingTables_BookingTableStatus">
+    <End Role="BookingTableStatu" Type="HMSModel.Store.BookingTableStatus" Multiplicity="1" />
+    <End Role="BookingTable" Type="HMSModel.Store.BookingTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookingTableStatu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookingTable">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanquetDishes_Dishes">
+    <End Role="Dish" Type="HMSModel.Store.Dishes" Multiplicity="1" />
+    <End Role="BanquetDish" Type="HMSModel.Store.BanquetDishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BanquetDish">
+        <PropertyRef Name="DishId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanquetDishes_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="0..1" />
+    <End Role="BanquetDish" Type="HMSModel.Store.BanquetDishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BanquetDish">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookingTables_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="BookingTable" Type="HMSModel.Store.BookingTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookingTable">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Waiters_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="Waiter" Type="HMSModel.Store.Waiters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Waiter">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WatersSchedule_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="WatersSchedule" Type="HMSModel.Store.WatersSchedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WatersSchedule">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanquetDishes_Banquets">
+    <End Role="Banquet" Type="HMSModel.Store.Banquets" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BanquetDish" Type="HMSModel.Store.BanquetDishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banquet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BanquetDish">
+        <PropertyRef Name="BanquetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Banquets_BanquetStatus">
+    <End Role="BanquetStatu" Type="HMSModel.Store.BanquetStatus" Multiplicity="1" />
+    <End Role="Banquet" Type="HMSModel.Store.Banquets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BanquetStatu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Banquet">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Banquets_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="Banquet" Type="HMSModel.Store.Banquets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Banquet">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Banquets_PrepaymentStatuses">
+    <End Role="PrepaymentStatus" Type="HMSModel.Store.PrepaymentStatuses" Multiplicity="1" />
+    <End Role="Banquet" Type="HMSModel.Store.Banquets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrepaymentStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Banquet">
+        <PropertyRef Name="PrepaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dishes_DishType">
+    <End Role="DishType" Type="HMSModel.Store.DishTypes" Multiplicity="0..1" />
+    <End Role="Dish" Type="HMSModel.Store.Dishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DishType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dish">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DishType_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="DishType" Type="HMSModel.Store.DishTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishType">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrepaymentStatuses_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="PrepaymentStatus" Type="HMSModel.Store.PrepaymentStatuses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrepaymentStatus">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reports_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="Report" Type="HMSModel.Store.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TablePosition_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="TablePosition" Type="HMSModel.Store.TablePositions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TablePosition">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookingTables_RestTables">
+    <End Role="RestTable" Type="HMSModel.Store.RestTables" Multiplicity="1" />
+    <End Role="BookingTable" Type="HMSModel.Store.BookingTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RestTable">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookingTable">
+        <PropertyRef Name="Table" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RestTables_ToTablePosition">
+    <End Role="TablePosition" Type="HMSModel.Store.TablePositions" Multiplicity="0..1" />
+    <End Role="RestTable" Type="HMSModel.Store.RestTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TablePosition">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RestTable">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RestTables_ToUsers">
+    <End Role="User" Type="HMSModel.Store.Users" Multiplicity="1" />
+    <End Role="RestTable" Type="HMSModel.Store.RestTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RestTable">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DBEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BanquetDishes" EntityType="HMSModel.BanquetDish" />
+          <EntitySet Name="BanquetStatus" EntityType="HMSModel.BanquetStatu" />
+          <EntitySet Name="BookingTableStatus" EntityType="HMSModel.BookingTableStatu" />
+          <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagram" />
+          <EntitySet Name="BookingTables" EntityType="HMSModel.BookingTable" />
+          <AssociationSet Name="FK_BookingTables_BookingTableStatus" Association="HMSModel.FK_BookingTables_BookingTableStatus">
+            <End Role="BookingTableStatu" EntitySet="BookingTableStatus" />
+            <End Role="BookingTable" EntitySet="BookingTables" />
+          </AssociationSet>
+          <EntitySet Name="Dishes" EntityType="HMSModel.Dish" />
+          <AssociationSet Name="FK_BanquetDishes_Dishes" Association="HMSModel.FK_BanquetDishes_Dishes">
+            <End Role="Dish" EntitySet="Dishes" />
+            <End Role="BanquetDish" EntitySet="BanquetDishes" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="HMSModel.User" />
+          <AssociationSet Name="FK_BanquetDishes_ToUsers" Association="HMSModel.FK_BanquetDishes_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="BanquetDish" EntitySet="BanquetDishes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookingTables_ToUsers" Association="HMSModel.FK_BookingTables_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="BookingTable" EntitySet="BookingTables" />
+          </AssociationSet>
+          <EntitySet Name="Waiters" EntityType="HMSModel.Waiter" />
+          <AssociationSet Name="FK_Waiters_ToUsers" Association="HMSModel.FK_Waiters_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Waiter" EntitySet="Waiters" />
+          </AssociationSet>
+          <EntitySet Name="WatersSchedules" EntityType="HMSModel.WatersSchedule" />
+          <AssociationSet Name="FK_WatersSchedule_ToUsers" Association="HMSModel.FK_WatersSchedule_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="WatersSchedule" EntitySet="WatersSchedules" />
+          </AssociationSet>
+          <EntitySet Name="Banquets" EntityType="HMSModel.Banquet" />
+          <AssociationSet Name="FK_BanquetDishes_Banquets" Association="HMSModel.FK_BanquetDishes_Banquets">
+            <End Role="Banquet" EntitySet="Banquets" />
+            <End Role="BanquetDish" EntitySet="BanquetDishes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Banquets_BanquetStatus" Association="HMSModel.FK_Banquets_BanquetStatus">
+            <End Role="BanquetStatu" EntitySet="BanquetStatus" />
+            <End Role="Banquet" EntitySet="Banquets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Banquets_ToUsers" Association="HMSModel.FK_Banquets_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Banquet" EntitySet="Banquets" />
+          </AssociationSet>
+          <EntitySet Name="DishTypes" EntityType="HMSModel.DishType" />
+          <EntitySet Name="PrepaymentStatuses" EntityType="HMSModel.PrepaymentStatus" />
+          <EntitySet Name="Reports" EntityType="HMSModel.Report" />
+          <EntitySet Name="TablePositions" EntityType="HMSModel.TablePosition" />
+          <AssociationSet Name="FK_Banquets_PrepaymentStatuses" Association="HMSModel.FK_Banquets_PrepaymentStatuses">
+            <End Role="PrepaymentStatus" EntitySet="PrepaymentStatuses" />
+            <End Role="Banquet" EntitySet="Banquets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dishes_DishType" Association="HMSModel.FK_Dishes_DishType">
+            <End Role="DishType" EntitySet="DishTypes" />
+            <End Role="Dish" EntitySet="Dishes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DishType_ToUsers" Association="HMSModel.FK_DishType_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DishType" EntitySet="DishTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrepaymentStatuses_ToUsers" Association="HMSModel.FK_PrepaymentStatuses_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PrepaymentStatus" EntitySet="PrepaymentStatuses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_ToUsers" Association="HMSModel.FK_Reports_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TablePosition_ToUsers" Association="HMSModel.FK_TablePosition_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="TablePosition" EntitySet="TablePositions" />
+          </AssociationSet>
+          <EntitySet Name="RestTables" EntityType="HMSModel.RestTable" />
+          <AssociationSet Name="FK_BookingTables_RestTables" Association="HMSModel.FK_BookingTables_RestTables">
+            <End Role="RestTable" EntitySet="RestTables" />
+            <End Role="BookingTable" EntitySet="BookingTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestTables_ToTablePosition" Association="HMSModel.FK_RestTables_ToTablePosition">
+            <End Role="TablePosition" EntitySet="TablePositions" />
+            <End Role="RestTable" EntitySet="RestTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RestTables_ToUsers" Association="HMSModel.FK_RestTables_ToUsers">
+            <End Role="User" EntitySet="Users" />
+            <End Role="RestTable" EntitySet="RestTables" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="BanquetDish">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BanquetId" Type="Int32" Nullable="false" />
+          <Property Name="DishId" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="ChangedBy" Type="Int32" />
+          <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Dish" Relationship="HMSModel.FK_BanquetDishes_Dishes" FromRole="BanquetDish" ToRole="Dish" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_BanquetDishes_ToUsers" FromRole="BanquetDish" ToRole="User" />
+          <NavigationProperty Name="Banquet" Relationship="HMSModel.FK_BanquetDishes_Banquets" FromRole="BanquetDish" ToRole="Banquet" />
+        </EntityType>
+        <EntityType Name="BanquetStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Banquets" Relationship="HMSModel.FK_Banquets_BanquetStatus" FromRole="BanquetStatu" ToRole="Banquet" />
+        </EntityType>
+        <EntityType Name="BookingTableStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BookingTables" Relationship="HMSModel.FK_BookingTables_BookingTableStatus" FromRole="BookingTableStatu" ToRole="BookingTable" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BookingTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Table" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfQuests" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="BookingTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BookingTableStatu" Relationship="HMSModel.FK_BookingTables_BookingTableStatus" FromRole="BookingTable" ToRole="BookingTableStatu" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_BookingTables_ToUsers" FromRole="BookingTable" ToRole="User" />
+          <NavigationProperty Name="RestTable" Relationship="HMSModel.FK_BookingTables_RestTables" FromRole="BookingTable" ToRole="RestTable" />
+        </EntityType>
+        <Association Name="FK_BookingTables_BookingTableStatus">
+          <End Type="HMSModel.BookingTableStatu" Role="BookingTableStatu" Multiplicity="1" />
+          <End Type="HMSModel.BookingTable" Role="BookingTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookingTableStatu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BookingTable">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Dish">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="Discount" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Weight" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="IsAvalible" Type="Boolean" Nullable="false" />
+          <Property Name="Сomposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChangedBy" Type="Int32" />
+          <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BanquetDishes" Relationship="HMSModel.FK_BanquetDishes_Dishes" FromRole="Dish" ToRole="BanquetDish" />
+          <NavigationProperty Name="DishType" Relationship="HMSModel.FK_Dishes_DishType" FromRole="Dish" ToRole="DishType" />
+        </EntityType>
+        <Association Name="FK_BanquetDishes_Dishes">
+          <End Type="HMSModel.Dish" Role="Dish" Multiplicity="1" />
+          <End Type="HMSModel.BanquetDish" Role="BanquetDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dish">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BanquetDish">
+              <PropertyRef Name="DishId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="isAdmininistrator" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BanquetDishes" Relationship="HMSModel.FK_BanquetDishes_ToUsers" FromRole="User" ToRole="BanquetDish" />
+          <NavigationProperty Name="BookingTables" Relationship="HMSModel.FK_BookingTables_ToUsers" FromRole="User" ToRole="BookingTable" />
+          <NavigationProperty Name="Waiters" Relationship="HMSModel.FK_Waiters_ToUsers" FromRole="User" ToRole="Waiter" />
+          <NavigationProperty Name="WatersSchedules" Relationship="HMSModel.FK_WatersSchedule_ToUsers" FromRole="User" ToRole="WatersSchedule" />
+          <NavigationProperty Name="Banquets" Relationship="HMSModel.FK_Banquets_ToUsers" FromRole="User" ToRole="Banquet" />
+          <NavigationProperty Name="DishTypes" Relationship="HMSModel.FK_DishType_ToUsers" FromRole="User" ToRole="DishType" />
+          <NavigationProperty Name="PrepaymentStatuses" Relationship="HMSModel.FK_PrepaymentStatuses_ToUsers" FromRole="User" ToRole="PrepaymentStatus" />
+          <NavigationProperty Name="Reports" Relationship="HMSModel.FK_Reports_ToUsers" FromRole="User" ToRole="Report" />
+          <NavigationProperty Name="TablePositions" Relationship="HMSModel.FK_TablePosition_ToUsers" FromRole="User" ToRole="TablePosition" />
+          <NavigationProperty Name="RestTables" Relationship="HMSModel.FK_RestTables_ToUsers" FromRole="User" ToRole="RestTable" />
+        </EntityType>
+        <Association Name="FK_BanquetDishes_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="HMSModel.BanquetDish" Role="BanquetDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BanquetDish">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookingTables_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.BookingTable" Role="BookingTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BookingTable">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Waiter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_Waiters_ToUsers" FromRole="Waiter" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Waiters_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.Waiter" Role="Waiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Waiter">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="WatersSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WaterId" Type="Int32" Nullable="false" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_WatersSchedule_ToUsers" FromRole="WatersSchedule" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_WatersSchedule_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.WatersSchedule" Role="WatersSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WatersSchedule">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Banquet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Time" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NumberOfQuests" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerLastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerPhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrepaymentId" Type="Int32" Nullable="false" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="Service" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="Discount" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangeDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BanquetDishes" Relationship="HMSModel.FK_BanquetDishes_Banquets" FromRole="Banquet" ToRole="BanquetDish" />
+          <NavigationProperty Name="BanquetStatu" Relationship="HMSModel.FK_Banquets_BanquetStatus" FromRole="Banquet" ToRole="BanquetStatu" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_Banquets_ToUsers" FromRole="Banquet" ToRole="User" />
+          <NavigationProperty Name="PrepaymentStatus" Relationship="HMSModel.FK_Banquets_PrepaymentStatuses" FromRole="Banquet" ToRole="PrepaymentStatus" />
+        </EntityType>
+        <Association Name="FK_BanquetDishes_Banquets">
+          <End Type="HMSModel.Banquet" Role="Banquet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="HMSModel.BanquetDish" Role="BanquetDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Banquet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BanquetDish">
+              <PropertyRef Name="BanquetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Banquets_BanquetStatus">
+          <End Type="HMSModel.BanquetStatu" Role="BanquetStatu" Multiplicity="1" />
+          <End Type="HMSModel.Banquet" Role="Banquet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BanquetStatu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Banquet">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Banquets_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.Banquet" Role="Banquet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Banquet">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DishType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Dishes" Relationship="HMSModel.FK_Dishes_DishType" FromRole="DishType" ToRole="Dish" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_DishType_ToUsers" FromRole="DishType" ToRole="User" />
+        </EntityType>
+        <EntityType Name="PrepaymentStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Banquets" Relationship="HMSModel.FK_Banquets_PrepaymentStatuses" FromRole="PrepaymentStatus" ToRole="Banquet" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_PrepaymentStatuses_ToUsers" FromRole="PrepaymentStatus" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_Reports_ToUsers" FromRole="Report" ToRole="User" />
+        </EntityType>
+        <EntityType Name="TablePosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_TablePosition_ToUsers" FromRole="TablePosition" ToRole="User" />
+          <NavigationProperty Name="RestTables" Relationship="HMSModel.FK_RestTables_ToTablePosition" FromRole="TablePosition" ToRole="RestTable" />
+        </EntityType>
+        <Association Name="FK_Banquets_PrepaymentStatuses">
+          <End Type="HMSModel.PrepaymentStatus" Role="PrepaymentStatus" Multiplicity="1" />
+          <End Type="HMSModel.Banquet" Role="Banquet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrepaymentStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Banquet">
+              <PropertyRef Name="PrepaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dishes_DishType">
+          <End Type="HMSModel.DishType" Role="DishType" Multiplicity="0..1" />
+          <End Type="HMSModel.Dish" Role="Dish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DishType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dish">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DishType_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.DishType" Role="DishType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DishType">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrepaymentStatuses_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.PrepaymentStatus" Role="PrepaymentStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PrepaymentStatus">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TablePosition_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.TablePosition" Role="TablePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TablePosition">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RestTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableNumber" Type="Int32" Nullable="false" />
+          <Property Name="PositionId" Type="Int32" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ChangedBy" Type="Int32" Nullable="false" />
+          <Property Name="ChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BookingTables" Relationship="HMSModel.FK_BookingTables_RestTables" FromRole="RestTable" ToRole="BookingTable" />
+          <NavigationProperty Name="TablePosition" Relationship="HMSModel.FK_RestTables_ToTablePosition" FromRole="RestTable" ToRole="TablePosition" />
+          <NavigationProperty Name="User" Relationship="HMSModel.FK_RestTables_ToUsers" FromRole="RestTable" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_BookingTables_RestTables">
+          <End Type="HMSModel.RestTable" Role="RestTable" Multiplicity="1" />
+          <End Type="HMSModel.BookingTable" Role="BookingTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RestTable">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BookingTable">
+              <PropertyRef Name="Table" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestTables_ToTablePosition">
+          <End Type="HMSModel.TablePosition" Role="TablePosition" Multiplicity="0..1" />
+          <End Type="HMSModel.RestTable" Role="RestTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TablePosition">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RestTable">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RestTables_ToUsers">
+          <End Type="HMSModel.User" Role="User" Multiplicity="1" />
+          <End Type="HMSModel.RestTable" Role="RestTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RestTable">
+              <PropertyRef Name="ChangedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HMSModelStoreContainer" CdmEntityContainer="DBEntity">
+    <EntitySetMapping Name="BanquetDishes">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.BanquetDish)">
+        <MappingFragment StoreEntitySet="BanquetDishes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BanquetId" ColumnName="BanquetId" />
+          <ScalarProperty Name="DishId" ColumnName="DishId" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BanquetStatus">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.BanquetStatu)">
+        <MappingFragment StoreEntitySet="BanquetStatus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookingTableStatus">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.BookingTableStatu)">
+        <MappingFragment StoreEntitySet="BookingTableStatus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.sysdiagram)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookingTables">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.BookingTable)">
+        <MappingFragment StoreEntitySet="BookingTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Table" ColumnName="Table" />
+          <ScalarProperty Name="NumberOfQuests" ColumnName="NumberOfQuests" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="BookingTime" ColumnName="BookingTime" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dishes">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.Dish)">
+        <MappingFragment StoreEntitySet="Dishes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="IsAvalible" ColumnName="IsAvalible" />
+          <ScalarProperty Name="Сomposition" ColumnName="Сomposition" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="isAdmininistrator" ColumnName="isAdmininistrator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waiters">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.Waiter)">
+        <MappingFragment StoreEntitySet="Waiters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WatersSchedules">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.WatersSchedule)">
+        <MappingFragment StoreEntitySet="WatersSchedules">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WaterId" ColumnName="WaterId" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banquets">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.Banquet)">
+        <MappingFragment StoreEntitySet="Banquets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="NumberOfQuests" ColumnName="NumberOfQuests" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="CustomerPhoneNumber" ColumnName="CustomerPhoneNumber" />
+          <ScalarProperty Name="PrepaymentId" ColumnName="PrepaymentId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.DishType)">
+        <MappingFragment StoreEntitySet="DishTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrepaymentStatuses">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.PrepaymentStatus)">
+        <MappingFragment StoreEntitySet="PrepaymentStatuses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.Report)">
+        <MappingFragment StoreEntitySet="Reports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablePositions">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.TablePosition)">
+        <MappingFragment StoreEntitySet="TablePositions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestTables">
+      <EntityTypeMapping TypeName="IsTypeOf(HMSModel.RestTable)">
+        <MappingFragment StoreEntitySet="RestTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TableNumber" ColumnName="TableNumber" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
