@@ -343,6 +343,10 @@
       <DependentUpon>DBEntity.edmx</DependentUpon>
       <LastGenOutput>DBEntity.cs</LastGenOutput>
     </Content>
+    <Content Include="screenshots\Screenshot 2023-03-29 212212.png" />
+    <Content Include="screenshots\Screenshot 2023-03-29 212239.png" />
+    <Content Include="screenshots\Screenshot 2023-03-29 212302.png" />
+    <Content Include="screenshots\Screenshot 2023-03-29 212330.png" />
     <None Include="Resources\logo3.png" />
     <Content Include="Resources\ReleaseNote.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
