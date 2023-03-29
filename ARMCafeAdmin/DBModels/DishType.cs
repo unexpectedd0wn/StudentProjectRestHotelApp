@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class PrepaymentStatus
+    public partial class DishType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PrepaymentStatus()
+        public DishType()
         {
-            this.Banquets = new HashSet<Banquet>();
+            this.Dishes = new HashSet<Dish>();
         }
     
         public int Id { get; set; }
@@ -27,7 +27,7 @@ namespace ARMCafeAdmin
         public System.DateTime ChangedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Banquet> Banquets { get; set; }
+        public virtual ICollection<Dish> Dishes { get; set; }
         public virtual User User { get; set; }
     }
 }

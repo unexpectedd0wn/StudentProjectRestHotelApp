@@ -7,27 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class BookingTable
+    public partial class WatersSchedule
     {
         public int Id { get; set; }
-        public System.DateTime Date { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
-        public int Table { get; set; }
-        public string NumberOfQuests { get; set; }
-        public int StatusId { get; set; }
-        public string BookingTime { get; set; }
+        public int WaterId { get; set; }
+        public System.DateTime WorkDate { get; set; }
         public int ChangedBy { get; set; }
         public System.DateTime ChangedDate { get; set; }
     
-        public virtual BookingTableStatu BookingTableStatu { get; set; }
         public virtual User User { get; set; }
-        public virtual RestTable RestTable { get; set; }
     }
 }

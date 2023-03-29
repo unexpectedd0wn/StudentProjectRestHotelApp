@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class WatersSchedule
+    public partial class Report
     {
         public int Id { get; set; }
-        public int WaterId { get; set; }
-        public System.DateTime WorkDate { get; set; }
+        public string Name { get; set; }
+        public bool IsActive { get; set; }
         public int ChangedBy { get; set; }
         public System.DateTime ChangedDate { get; set; }
     

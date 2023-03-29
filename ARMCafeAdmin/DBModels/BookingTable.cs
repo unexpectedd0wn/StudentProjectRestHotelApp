@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class DishType
+    public partial class BookingTable
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DishType()
-        {
-            this.Dishes = new HashSet<Dish>();
-        }
-    
         public int Id { get; set; }
-        public string Name { get; set; }
-        public bool IsActive { get; set; }
+        public System.DateTime Date { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public int Table { get; set; }
+        public string NumberOfQuests { get; set; }
+        public int StatusId { get; set; }
+        public string BookingTime { get; set; }
         public int ChangedBy { get; set; }
         public System.DateTime ChangedDate { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dish> Dishes { get; set; }
+        public virtual BookingTableStatu BookingTableStatu { get; set; }
         public virtual User User { get; set; }
+        public virtual RestTable RestTable { get; set; }
     }
 }

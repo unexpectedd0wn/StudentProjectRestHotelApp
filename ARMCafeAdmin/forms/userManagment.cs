@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data;
 using ClosedXML.Excel;
+using ARMCafeAdmin.DBModels;
 
 namespace ARMCafeAdmin
 {

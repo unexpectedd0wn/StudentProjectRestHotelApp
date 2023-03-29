@@ -7,30 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class RestTable
+    public partial class BookingTableStatu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RestTable()
+        public BookingTableStatu()
         {
             this.BookingTables = new HashSet<BookingTable>();
         }
     
         public int Id { get; set; }
-        public int TableNumber { get; set; }
-        public Nullable<int> PositionId { get; set; }
-        public string Comment { get; set; }
-        public bool IsActive { get; set; }
-        public int ChangedBy { get; set; }
-        public System.DateTime ChangedDate { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookingTable> BookingTables { get; set; }
-        public virtual TablePosition TablePosition { get; set; }
-        public virtual User User { get; set; }
     }
 }

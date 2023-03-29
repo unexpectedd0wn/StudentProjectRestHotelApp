@@ -126,40 +126,40 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banquet.cs">
+    <Compile Include="DBModels\Banquet.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="BanquetDish.cs">
+    <Compile Include="DBModels\BanquetDish.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="BanquetStatu.cs">
+    <Compile Include="DBModels\BanquetStatu.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookingTable.cs">
+    <Compile Include="DBModels\BookingTable.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookingTableStatu.cs">
+    <Compile Include="DBModels\BookingTableStatu.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBEntity.Context.cs">
+    <Compile Include="DBModels\DBEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBEntity.cs">
+    <Compile Include="DBModels\DBEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBEntity.Designer.cs">
+    <Compile Include="DBModels\DBEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Dish.cs">
+    <Compile Include="DBModels\Dish.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="DishType.cs">
+    <Compile Include="DBModels\DishType.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="forms\.Designer - Copy.cs">
@@ -237,7 +237,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="global.cs" />
-    <Compile Include="PrepaymentStatus.cs">
+    <Compile Include="DBModels\PrepaymentStatus.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -247,25 +247,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
+    <Compile Include="DBModels\Report.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="RestTable.cs">
+    <Compile Include="DBModels\RestTable.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="DBModels\sysdiagram.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="TablePosition.cs">
+    <Compile Include="DBModels\TablePosition.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
+    <Compile Include="DBModels\User.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Waiter.cs">
+    <Compile Include="DBModels\Waiter.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="WatersSchedule.cs">
+    <Compile Include="DBModels\WatersSchedule.cs">
       <DependentUpon>DBEntity.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="forms\banquetManagment.resx">
@@ -309,12 +309,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DBEntity.edmx">
+    <EntityDeploy Include="DBModels\DBEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="ARMCafeAdmin_TemporaryKey.pfx" />
-    <None Include="DBEntity.edmx.diagram">
+    <None Include="DBModels\DBEntity.edmx.diagram">
       <DependentUpon>DBEntity.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -332,13 +332,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBEntity.Context.tt">
+    <Content Include="DBModels\DBEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBEntity.edmx</DependentUpon>
       <LastGenOutput>DBEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBEntity.edmx.sql" />
-    <Content Include="DBEntity.tt">
+    <Content Include="DBModels\DBEntity.edmx.sql" />
+    <Content Include="DBModels\DBEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBEntity.edmx</DependentUpon>
       <LastGenOutput>DBEntity.cs</LastGenOutput>
@@ -357,9 +357,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DBModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

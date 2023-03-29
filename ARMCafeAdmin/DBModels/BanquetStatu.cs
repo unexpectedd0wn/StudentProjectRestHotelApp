@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class BookingTableStatu
+    public partial class BanquetStatu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BookingTableStatu()
+        public BanquetStatu()
         {
-            this.BookingTables = new HashSet<BookingTable>();
+            this.Banquets = new HashSet<Banquet>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BookingTable> BookingTables { get; set; }
+        public virtual ICollection<Banquet> Banquets { get; set; }
     }
 }

@@ -7,19 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Report
+    public partial class BanquetDish
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public bool IsActive { get; set; }
-        public int ChangedBy { get; set; }
-        public System.DateTime ChangedDate { get; set; }
+        public int BanquetId { get; set; }
+        public int DishId { get; set; }
+        public Nullable<int> Qty { get; set; }
+        public Nullable<int> ChangedBy { get; set; }
+        public Nullable<System.DateTime> ChangedDate { get; set; }
     
+        public virtual Dish Dish { get; set; }
         public virtual User User { get; set; }
+        public virtual Banquet Banquet { get; set; }
     }
 }

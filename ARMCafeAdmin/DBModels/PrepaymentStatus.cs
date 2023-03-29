@@ -7,32 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ARMCafeAdmin
+namespace ARMCafeAdmin.DBModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Dish
+    public partial class PrepaymentStatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Dish()
+        public PrepaymentStatus()
         {
-            this.BanquetDishes = new HashSet<BanquetDish>();
+            this.Banquets = new HashSet<Banquet>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public Nullable<decimal> Discount { get; set; }
-        public Nullable<int> Type { get; set; }
-        public decimal Weight { get; set; }
-        public bool IsAvalible { get; set; }
-        public string Сomposition { get; set; }
-        public Nullable<int> ChangedBy { get; set; }
-        public Nullable<System.DateTime> ChangedDate { get; set; }
+        public bool IsActive { get; set; }
+        public int ChangedBy { get; set; }
+        public System.DateTime ChangedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BanquetDish> BanquetDishes { get; set; }
-        public virtual DishType DishType { get; set; }
+        public virtual ICollection<Banquet> Banquets { get; set; }
+        public virtual User User { get; set; }
     }
 }
